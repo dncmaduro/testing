@@ -7446,6 +7446,11 @@ reusify@^1.0.4:
   resolved "https://registry.yarnpkg.com/reusify/-/reusify-1.0.4.tgz#90da382b1e126efc02146e90845a88db12925d76"
   integrity sha512-U9nH88a3fc/ekCF1l0/UP1IosiuIjyTh7hBvXVMHYgVcfGvt897Xguj2UOLDeI5BG2m7/uwyaLVT6fbtCwTyzw==
 
+rexpress@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/rexpress/-/rexpress-0.2.0.tgz#e137e8e223bfabfc1cb902918da76a0a7bcd941e"
+  integrity sha512-g7IPLOBTYVGtLWVTjo3MMNj0aWRk9u0jE8067A9a+mIsMXLFYttP7quS6ywm/R/0LzbL5EUQZ6d3eVbHmmdGig==
+
 rimraf@^3.0.0, rimraf@^3.0.2:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/rimraf/-/rimraf-3.0.2.tgz#f1a5402ba6220ad52cc1282bac1ae3aa49fd061a"
