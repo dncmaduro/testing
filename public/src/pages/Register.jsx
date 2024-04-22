@@ -35,31 +35,30 @@ export default function Register() {
 
   const handleValidation = () => {
     const { password, confirmPassword, username, email } = values;
+  
+    // Biểu thức chính quy để kiểm tra email hợp lệ
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  
     if (password !== confirmPassword) {
-      toast.error(
-        "Password and confirm password should be same.",
-        toastOptions
-      );
+      toast.error("Password and confirm password should be same.", toastOptions);
       return false;
     } else if (username.length < 3) {
-      toast.error(
-        "Username should be greater than 3 characters.",
-        toastOptions
-      );
+      toast.error("Username should be greater than 3 characters.", toastOptions);
       return false;
     } else if (password.length < 8) {
-      toast.error(
-        "Password should be equal or greater than 8 characters.",
-        toastOptions
-      );
+      toast.error("Password should be equal or greater than 8 characters.", toastOptions);
       return false;
     } else if (email === "") {
       toast.error("Email is required.", toastOptions);
       return false;
+    } else if (!emailRegex.test(email)) { // Thêm dòng này để kiểm tra email
+      toast.error("Email is invalid.", toastOptions);
+      return false;
     }
-
+  
     return true;
   };
+  
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -99,7 +98,7 @@ export default function Register() {
             onChange={(e) => handleChange(e)}
           />
           <input
-            type="email"
+            type="text"
             placeholder="Email"
             name="email"
             onChange={(e) => handleChange(e)}
