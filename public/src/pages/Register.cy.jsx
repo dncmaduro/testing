@@ -76,7 +76,7 @@ describe('<Register />', () => {
     cy.contains('Registration successful!').should('be.visible')
   });
 
-  it('should show error when email is duplicated', () => {
+  it('should show error when username is duplicated', () => {
     const timestamp = Date.now()
 
     cy.get('input[name="username"]').type(`maduro`);
@@ -89,12 +89,31 @@ describe('<Register />', () => {
 
   it('should show error when email is duplicated', () => {
     const timestamp = Date.now()
-    
+
     cy.get('input[name="username"]').type(`usernameTest${timestamp}`);
     cy.get('input[name="email"]').type(`manhdungtran.vnuuet@gmail.com`);
     cy.get('input[name="password"]').type('$gunnyhades9$');
     cy.get('input[name="confirmPassword"]').type('$gunnyhades9$');
     cy.get('button[type="submit"]').click();
     cy.contains('Email already used!').should('be.visible')
+  })
+
+  it('should navigate to the main page after register with valid values', () => {
+    const timestamp = Date.now()
+    const urlAfterRegister = 'http://localhost:8080/'
+
+    cy.get('input[name="username"]').type(`usernameTest${timestamp}`);
+    cy.get('input[name="email"]').type(`emailTest${timestamp}@example.com`);
+    cy.get('input[name="password"]').type('$gunnyhades9$');
+    cy.get('input[name="confirmPassword"]').type('$gunnyhades9$');
+    cy.get('button[type="submit"]').click();
+    cy.url().should('eq', `${urlAfterRegister}`)
+  });
+
+  it('should navigate to Login page when click login', () => {
+    const urlIncludeLogin = '/login'
+
+    cy.get('a').contains('Login.').click()
+    cy.url().should('include', `${urlIncludeLogin}`)
   })
 });
