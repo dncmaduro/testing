@@ -78,6 +78,7 @@ export default function Register() {
           process.env.REACT_APP_LOCALHOST_KEY,
           JSON.stringify(data.user)
         );
+        toast.success("Registration successful!", toastOptions)
         navigate("/");
       }
     }

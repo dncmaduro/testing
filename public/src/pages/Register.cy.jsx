@@ -65,4 +65,36 @@ describe('<Register />', () => {
     cy.contains('Email is invalid.').should('be.visible');
   });
   
+  it('should submit the form with valid values', () => {
+    const timestamp = Date.now()
+
+    cy.get('input[name="username"]').type(`usernameTest${timestamp}`);
+    cy.get('input[name="email"]').type(`emailTest${timestamp}@example.com`);
+    cy.get('input[name="password"]').type('$gunnyhades9$');
+    cy.get('input[name="confirmPassword"]').type('$gunnyhades9$');
+    cy.get('button[type="submit"]').click();
+    cy.contains('Registration successful!').should('be.visible')
+  });
+
+  it('should show error when email is duplicated', () => {
+    const timestamp = Date.now()
+
+    cy.get('input[name="username"]').type(`maduro`);
+    cy.get('input[name="email"]').type(`emailTest${timestamp}@example.com`);
+    cy.get('input[name="password"]').type('$gunnyhades9$');
+    cy.get('input[name="confirmPassword"]').type('$gunnyhades9$');
+    cy.get('button[type="submit"]').click();
+    cy.contains('Username already used!').should('be.visible')
+  })
+
+  it('should show error when email is duplicated', () => {
+    const timestamp = Date.now()
+    
+    cy.get('input[name="username"]').type(`usernameTest${timestamp}`);
+    cy.get('input[name="email"]').type(`manhdungtran.vnuuet@gmail.com`);
+    cy.get('input[name="password"]').type('$gunnyhades9$');
+    cy.get('input[name="confirmPassword"]').type('$gunnyhades9$');
+    cy.get('button[type="submit"]').click();
+    cy.contains('Email already used!').should('be.visible')
+  })
 });
