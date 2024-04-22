@@ -8,11 +8,13 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^0.25.0",
     "buffer": "^6.0.3",
+    "cypress": "^13.7.2",
     "emoji-picker-react": "^3.5.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-icons": "^4.3.1",
-    "react-router-dom": "^6.2.1",
+    "react-router": "6.2.1",
+    "react-router-dom": "6.2.1",
     "react-scripts": "5.0.0",
     "react-toastify": "^8.1.1",
     "rexpress": "^0.2.0",
@@ -25,7 +27,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "cy:open": "cypress open"
   },
   "eslintConfig": {
     "extends": [

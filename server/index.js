@@ -19,7 +19,7 @@ mongoose
     console.log("DB Connetion Successfull");
   })
   .catch((err) => {
-    console.log(err.message);
+    console.log(err.message, "ok");
   });
 
 app.use("/api/auth", authRoutes);
