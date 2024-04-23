@@ -20,7 +20,6 @@ export default function Contacts({ contacts, changeChat }) {
     }
     fetchData();
   }, []);
-  console.log(contacts, currentUserImage)
   
   const changeCurrentChat = (index, contact) => {
     setCurrentSelected(index);
@@ -39,6 +38,7 @@ export default function Contacts({ contacts, changeChat }) {
               return (
                 <div
                   key={contact._id}
+                  data-id={contact._id}
                   className={`contact ${
                     index === currentSelected ? "selected" : ""
                   }`}

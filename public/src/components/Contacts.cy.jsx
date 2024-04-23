@@ -12,12 +12,23 @@ describe('<Contacts />', () => {
       process.env.REACT_APP_LOCALHOST_KEY,
       JSON.stringify(fakeLocal)
     );
+    mount(<Contacts contacts={fakeContacts} changeChat={() => {}} />);
   });
 
   it('renders', () => {
 
-    // Sử dụng dữ liệu giả mạo
-    console.log(fakeContacts)
     mount(<Contacts contacts={fakeContacts} changeChat={() => {}} />);
+  });
+
+  it('should not have any contact selected initially', () => {
+    // Kiểm tra xem không có liên hệ nào có class 'selected'
+    cy.get('.contact.selected').should('not.exist');
+  });
+
+  it('should select a contact when clicked', () => {
+    cy.get('[data-id="6626952a89778c8e2dc2ecda"]').click();
+    cy.get('[data-id="6626952a89778c8e2dc2ecda"]').should('have.class', 'selected');
+    cy.get('[data-id="6626952a89778c8e2dc2ecd8"]').click();
+    cy.get('[data-id="6626952a89778c8e2dc2ecd8"]').should('have.class', 'selected');
   });
 });
