@@ -27,7 +27,7 @@ export default function Contacts({ contacts, changeChat }) {
   };
   return (
     <>
-      {currentUserImage && currentUserImage && (
+      {currentUserImage && (
         <Container>
           <div className="brand">
             <img src={Logo} alt="logo" />
@@ -38,6 +38,7 @@ export default function Contacts({ contacts, changeChat }) {
               return (
                 <div
                   key={contact._id}
+                  data-id={contact._id}
                   className={`contact ${
                     index === currentSelected ? "selected" : ""
                   }`}
