@@ -7,7 +7,6 @@ import fakeLocal from '../utils/FakeLocal.json'
 describe('<Contacts />', () => {
 
   beforeEach(() => {
-    // Thiết lập giá trị giả mạo trong localStorage
     window.localStorage.setItem(
       process.env.REACT_APP_LOCALHOST_KEY,
       JSON.stringify(fakeLocal)
