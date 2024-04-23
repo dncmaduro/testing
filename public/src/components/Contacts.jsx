@@ -20,6 +20,7 @@ export default function Contacts({ contacts, changeChat }) {
     }
     fetchData();
   }, []);
+  console.log(contacts, currentUserImage)
   
   const changeCurrentChat = (index, contact) => {
     setCurrentSelected(index);
@@ -27,7 +28,7 @@ export default function Contacts({ contacts, changeChat }) {
   };
   return (
     <>
-      {currentUserImage && currentUserImage && (
+      {currentUserImage && (
         <Container>
           <div className="brand">
             <img src={Logo} alt="logo" />
