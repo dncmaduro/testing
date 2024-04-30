@@ -79,7 +79,7 @@ export default function ChatContainer({ currentChat, socket }) {
               alt=""
             />
           </div>
-          {username ? <div className="username">
+          {currentChat.username ? <div className="username">
             <h3>{currentChat.username}</h3>
           </div> : <></>}
         </div>
