@@ -104,7 +104,7 @@ export default function ChatContainer({ currentChat, socket }) {
       </div>
       <ChatInput handleSendMsg={handleSendMsg} />
     </Container>
-  );
+  );  
 }
 
 const Container = styled.div`
