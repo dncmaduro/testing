@@ -1,7 +1,7 @@
 describe("E2E Test - Login and Chat", () => {
   const validUser = {
-    username: "usertest1",
-    password: "validpassword123",
+    username: "maduro",
+    password: "$gunnyhades9$",
   };
 
   beforeEach(() => {
